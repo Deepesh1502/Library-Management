@@ -14,15 +14,16 @@
     </style>
 </head>
 <body>
+    <h1>Library Management System</h1>
     <h1>Issue a Book</h1>
     <form method="post">
         {% csrf_token %}
         <label>Book ID:</label><br>
-        <input type="number" name="book_id" required><br><br>
-
+        <input type="number" name="book_id" required>
+        <br><br>
         <label>Member ID:</label><br>
-        <input type="number" name="member_id" required><br><br>
-
+        <input type="number" name="member_id" required>
+        <br><br>
         <input type="submit" value="Issue Book">
     </form>
     <br>
