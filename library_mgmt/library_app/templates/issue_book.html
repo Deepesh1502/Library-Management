@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Issue Book</title>
+    <style>
+        h1 {
+            text-align: center;
+            color: darkblue;
+            font-family: Arial, sans-serif;
+        }
+        form {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Issue a Book</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label>Book ID:</label><br>
+        <input type="number" name="book_id" required><br><br>
+
+        <label>Member ID:</label><br>
+        <input type="number" name="member_id" required><br><br>
+
+        <input type="submit" value="Issue Book">
+    </form>
+    <br>
+    <form action="/" style="text-align: center;">
+        <button type="submit">Back to Book List</button>
+    </form>
+</body>
+</html>

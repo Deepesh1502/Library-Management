@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Library Books</title>
+    <style>
+        h1 {
+            text-align: center;
+            color: darkblue;
+            font-family: 'Times New Roman';
+        }
+    </style>
+</head>
+<body>
+    <h1>Library Book List</h1>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.title }} by {{ book.author }}</li>
+        {% empty %}
+            <li>No books available.</li>
+        {% endfor %}
+    </ul>
+    <br>
+    <form action="/add/" style="text-align: center;">
+        <button type="submit">Add a New Book</button>
+    </form>
+    <br><br>
+    <form action="/issue/" style="text-align: center;">
+        <button type="submit">Issue Book</button>
+    </form>
+    <br><br>
+    <form action="/return/" style="text-align: center;">
+        <button type="submit">Return Book</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Book</title>
+    <style>
+        h1 {
+            text-align: center;
+            color: darkblue;
+            font-family: 'Times New Roman';
+        }
+        form {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add a New Book</h1>
+    <form method="post">
+        {% csrf_token %}
+        Title: <input type="text" name="title" required>
+        <br><br>
+        Author: <input type="text" name="author" required>
+        <br><br>
+        ISBN: <input type="text" name="isbn" required>
+        <br><br>
+        Published Date: <input type="date" name="published_date" required>
+        <br><br>
+        <input type="submit" value="Add Book">
+    </form>
+    <br>
+    <form action="/" style="text-align: center;">
+        <button type="submit">Back to Book List</button>
+    </form>
+</body>
+</html>
