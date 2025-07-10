@@ -20,6 +20,7 @@
     </style>
 </head>
 <body>
+    <h1>Library Management System</h1>
     <h1>Library Book List</h1>
     <ul>
         {% for book in books %}
@@ -28,7 +29,7 @@
             <li>No books available.</li>
         {% endfor %}
     </ul>
-    <br>
+    <br><br>
     <form action="/add/" style="text-align: center;">
         <button type="submit">Add a New Book</button>
     </form>
