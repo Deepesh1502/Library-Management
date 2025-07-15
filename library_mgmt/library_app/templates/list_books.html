@@ -4,24 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Library Books</title>
+
+    <!--CSS StyleSheet -->
     <style>
         h1 {
             text-align: center;
             color: darkblue;
             font-family: 'Times New Roman';
-        }
-        ul {
+        } ul {
             list-style: none;
             padding: 0;
             width: fit-content;
             margin: 0 auto; 
             text-align: left;
         }
+        body {
+            background: linear-gradient(to right, #dfa72e, #bba981);
+        }
     </style>
+
 </head>
 <body>
     <h1>Library Management System</h1>
     <h1>Library Book List</h1>
+
+    <!--List of all the books added in library-->
     <ul>
         {% for book in books %}
             <li>{{ book.title }} by {{ book.author }}</li>
@@ -30,14 +37,20 @@
         {% endfor %}
     </ul>
     <br><br>
+
+    <!--Go to Add book page-->
     <form action="/add/" style="text-align: center;">
         <button type="submit">Add a New Book</button>
     </form>
     <br><br>
+
+    <!--Go to Issue book page-->
     <form action="/issue/" style="text-align: center;">
         <button type="submit">Issue Book</button>
     </form>
     <br><br>
+
+    <!--Go to Return book page-->
     <form action="/return/" style="text-align: center;">
         <button type="submit">Return Book</button>
     </form>
