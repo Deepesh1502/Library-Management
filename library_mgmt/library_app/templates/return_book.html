@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Return Book</title>
+
+    <!--CSS StyleSheet -->
     <style>
         h1 {
             text-align: center;
@@ -11,11 +13,17 @@
         form {
             text-align: center;
         }
+        body {
+            background: linear-gradient(to right, #dfa72e, #bba981);
+        }
     </style>
+
 </head>
 <body>
     <h1>Library Management System</h1>
     <h1>Return a Book</h1>
+
+    <!--Post Method to send the Retun Book Update to the System-->
     <form method="post">
         {% csrf_token %}
         <label>Book ID:</label>
@@ -24,7 +32,10 @@
         <br><br>
         <input type="submit" value="Return Book">
     </form>
+    
     <br>
+    
+    <!--Submit the Book Returned-->
     <form action="/" style="text-align: center;">
         <button type="submit">Back to Book List</button>
     </form>
