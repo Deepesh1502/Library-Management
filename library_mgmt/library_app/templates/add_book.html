@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Add Book</title>
+
+    <!--CSS StyleSheet-->
     <style>
         h1 {
             text-align: center;
@@ -11,19 +13,33 @@
         form {
             text-align: center;
         }
+        body {
+            background: linear-gradient(to right, #dfa72e, #bba981);
+        }
     </style>
+
 </head>
 <body>
     <h1>Library Management System</h1>
     <h1>Add a New Book</h1>
+
+    <!--Post Method to send the Add Book Update to the System-->
     <form method="post">
         {% csrf_token %}
+
+        <!--Ask the Book Title-->
         Title: <input type="text" name="title" required>
         <br><br>
+
+        <!--Ask the Book Author Name-->
         Author: <input type="text" name="author" required>
         <br><br>
+        
+        <!--Ask the Book ISBN number to avoid Duplicates-->
         ISBN: <input type="text" name="isbn" required>
         <br><br>
+
+        <!--Ask the date when the book has been Published-->
         Published Date: <input type="date" name="published_date" required>
         <br><br>
         <input type="submit" value="Add Book">
