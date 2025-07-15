@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Issue Book</title>
+
+    <!--CSS StyleSheet-->
     <style>
         h1 {
             text-align: center;
@@ -11,19 +13,28 @@
         form {
             text-align: center;
         }
+        body {
+            background: linear-gradient(to right, #dfa72e, #bba981);
+        }
     </style>
+
 </head>
 <body>
     <h1>Library Management System</h1>
     <h1>Issue a Book</h1>
+
+    <!--Post Method to send the Issue Book Update to the System-->
     <form method="post">
         {% csrf_token %}
+
+        <!--Ask the book id-->
         <label>Book ID:</label><br>
-        <input type="number" name="book_id" required>
-        <br><br>
+        <input type="number" name="book_id" required><br><br>
+
+        <!--Ask the Member ID-->
         <label>Member ID:</label><br>
-        <input type="number" name="member_id" required>
-        <br><br>
+        <input type="number" name="member_id" required><br><br>
+
         <input type="submit" value="Issue Book">
     </form>
     <br>
