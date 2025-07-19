@@ -1,0 +1,28 @@
+html {
+    font-family: 'Times New Roman';
+}
+header {
+    background-color: #5d4037; /* warm brown */
+    color: white;
+    padding: 15px 0px;
+    text-align: center;
+    font-size: 24px;
+}
+h1 {
+    text-align: center;
+    color: darkblue;
+}
+body {
+    background: linear-gradient(to right, #fdcd74, #e0cfa9);
+}
+ul {
+    font-size: 18px;
+}
+.container {
+    max-width: 400px;
+    background-color: #fffaf0;
+    padding: 20px;
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
