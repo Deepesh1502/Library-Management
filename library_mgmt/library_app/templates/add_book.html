@@ -3,50 +3,41 @@
 <head>
     <title>Add Book</title>
 
-    <!--CSS StyleSheet-->
-    <style>
-        h1 {
-            text-align: center;
-            color: darkblue;
-            font-family: 'Times New Roman';
-        }
-        form {
-            text-align: center;
-        }
-        body {
-            background: linear-gradient(to right, #dfa72e, #bba981);
-        }
-    </style>
+    <!--CSS StyleSheet -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'library_app/style.css' %}">
 
 </head>
 <body>
-    <h1>Library Management System</h1>
+    <header>Library Management System</header>
     <h1>Add a New Book</h1>
+    <div class="container">
+        <img src="https://cdn-icons-png.flaticon.com/512/29/29302.png" alt="Book Icon" width="60" style="display:block; margin: 0 auto 15px;">
+        <!--Post Method to send the Add Book Update to the System-->
+        <form method="post"  style="text-align: center;">
+            {% csrf_token %}
 
-    <!--Post Method to send the Add Book Update to the System-->
-    <form method="post">
-        {% csrf_token %}
-
-        <!--Ask the Book Title-->
-        Title: <input type="text" name="title" required>
-        <br><br>
-
-        <!--Ask the Book Author Name-->
-        Author: <input type="text" name="author" required>
-        <br><br>
+            <!--Ask the Book Title-->
+            Title: <input type="text" name="title" required>
+            <br><br>
         
-        <!--Ask the Book ISBN number to avoid Duplicates-->
-        ISBN: <input type="text" name="isbn" required>
-        <br><br>
+            <!--Ask the Book Author Name-->
+            Author: <input type="text" name="author" required>
+            <br><br>
+        
+            <!--Ask the Book ISBN number to avoid Duplicates-->
+            ISBN: <input type="text" name="isbn" required>
+            <br><br>
 
-        <!--Ask the date when the book has been Published-->
-        Published Date: <input type="date" name="published_date" required>
+            <!--Ask the date when the book has been Published-->
+            Published Date: <input type="date" name="published_date" required>
+            <br><br>
+            <input type="submit" value="Add Book">
+        </form>
         <br><br>
-        <input type="submit" value="Add Book">
-    </form>
-    <br>
-    <form action="/" style="text-align: center;">
-        <button type="submit">Back to Book List</button>
-    </form>
+        <form action="/"  style="text-align: center;">
+            <button type="submit">Back to Book List</button>
+        </form>
+    </div>
 </body>
 </html>
