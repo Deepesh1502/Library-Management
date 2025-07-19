@@ -6,53 +6,43 @@
     <title>Library Books</title>
 
     <!--CSS StyleSheet -->
-    <style>
-        h1 {
-            text-align: center;
-            color: darkblue;
-            font-family: 'Times New Roman';
-        } ul {
-            list-style: none;
-            padding: 0;
-            width: fit-content;
-            margin: 0 auto; 
-            text-align: left;
-        }
-        body {
-            background: linear-gradient(to right, #dfa72e, #bba981);
-        }
-    </style>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'library_app/style.css' %}">
 
 </head>
 <body>
-    <h1>Library Management System</h1>
+    <header>Library Management System</header>
     <h1>Library Book List</h1>
 
     <!--List of all the books added in library-->
-    <ul>
-        {% for book in books %}
-            <li>{{ book.title }} by {{ book.author }}</li>
-        {% empty %}
-            <li>No books available.</li>
-        {% endfor %}
-    </ul>
-    <br><br>
-
-    <!--Go to Add book page-->
-    <form action="/add/" style="text-align: center;">
-        <button type="submit">Add a New Book</button>
-    </form>
-    <br><br>
-
-    <!--Go to Issue book page-->
-    <form action="/issue/" style="text-align: center;">
-        <button type="submit">Issue Book</button>
-    </form>
-    <br><br>
-
-    <!--Go to Return book page-->
-    <form action="/return/" style="text-align: center;">
-        <button type="submit">Return Book</button>
-    </form>
+    <div class="container">
+        <img src="https://cdn-icons-png.flaticon.com/512/29/29302.png" alt="Book Icon" width="60" style="display:block; margin: 0 auto 15px;">
+        <ul>
+            {% for book in books %}
+                <li>{{ book.title }} by {{ book.author }}</li>
+            {% empty %}
+                <li>No books available.</li>
+            {% endfor %}
+        </ul>
+        <br>
+    
+        <!-- Navigation buttons -->
+        <div class="container">
+            <!-- Go to Add book page -->
+            <form action="/add/" style="text-align: center;">
+                <button type="submit">Add a New Book</button>
+            </form>
+            <br>
+            <!-- Go to Issue book page -->
+            <form action="/issue/" style="text-align: center;">
+                <button type="submit">Issue Book</button>
+            </form>
+            <br>
+            <!-- Go to Return book page -->
+            <form action="/return/" style="text-align: center;">
+                <button type="submit">Return Book</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
